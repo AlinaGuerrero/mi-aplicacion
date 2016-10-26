@@ -8,23 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var persona_1 = require("../clases/persona");
+var core_1 = require('@angular/core');
+var persona_1 = require('../clases/persona');
 var DetallePersonaComponent = (function () {
     function DetallePersonaComponent() {
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', persona_1.Persona)
+    ], DetallePersonaComponent.prototype, "persona", void 0);
+    DetallePersonaComponent = __decorate([
+        core_1.Component({
+            selector: 'mi-detalle-persona',
+            template: "\n    <div *ngIf=\"persona\">\n      <h2>{{persona.nombre}} - detalles!</h2>\n      <div><label>Id: </label>{{persona.id}}</div>\n      <div>\n        <label>Nombre: </label>\n        <input [(ngModel)]=\"persona.nombre\" placeholder=\"nombre\"/>\n      </div>\n    </div>\n  "
+        }), 
+        __metadata('design:paramtypes', [])
+    ], DetallePersonaComponent);
     return DetallePersonaComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", persona_1.Persona)
-], DetallePersonaComponent.prototype, "persona", void 0);
-DetallePersonaComponent = __decorate([
-    core_1.Component({
-        selector: 'mi-detalle-persona',
-        template: "\n    <div *ngIf=\"persona\">\n      <h2>{{persona.nombre}} - detalles!</h2>\n      <div><label>Id: </label>{{persona.id}}</div>\n      <div>\n        <label>Nombre: </label>\n        <input [(ngModel)]=\"persona.nombre\" placeholder=\"nombre\"/>\n      </div>\n    </div>\n  "
-    }),
-    __metadata("design:paramtypes", [])
-], DetallePersonaComponent);
 exports.DetallePersonaComponent = DetallePersonaComponent;
 //# sourceMappingURL=detalle-persona.component.js.map
