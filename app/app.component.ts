@@ -1,18 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,OnInit  } from '@angular/core';
 import { Persona } from './clases/persona';
 
-const PERSONAS: Persona[] = [
-  { id: 11, nombre: 'Alicia' },
-  { id: 12, nombre: 'Carlos' },
-  { id: 13, nombre: 'Julia' },
-  { id: 14, nombre: 'Daniel' },
-  { id: 15, nombre: 'Martha' },
-  { id: 16, nombre: 'José' },
-  { id: 17, nombre: 'Natalia' },
-  { id: 18, nombre: 'Xavier' },
-  { id: 19, nombre: 'Sofía' },
-  { id: 20, nombre: 'Adrián' }
-];
+import { PersonaService } from './servicios/persona.service';
+
 @Component({
   selector: 'my-app',
   template: `
@@ -75,13 +65,24 @@ const PERSONAS: Persona[] = [
       margin-right: .8em;
       border-radius: 4px 0 0 4px;
     }
-  `]
+  `],
+  providers: [PersonaService]
 })
 
 export class AppComponent {
   title = 'Mi Aplicación';
-  personas = PERSONAS;
+  personas : Persona[];
   selectedPersona: Persona;
+
+  constructor(private personaService: PersonaService) { }
+
+  getPersonas(): void {
+    this.personaService.getPersonas().then(personas => this.personas = personas);
+  }
+
+  ngOnInit(): void {
+    this.getPersonas();
+  }
   onSelect(persona: Persona): void {
     this.selectedPersona = persona;
   }
