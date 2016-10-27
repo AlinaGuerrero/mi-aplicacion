@@ -8,23 +8,45 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var mock_personas_1 = require('./mock-personas');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/toPromise");
 var PersonaService = (function () {
-    function PersonaService() {
+    function PersonaService(http) {
+        this.http = http;
+        this.personasUrl = 'app/personas'; // URL to web api
+        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     PersonaService.prototype.getPersonas = function () {
-        return Promise.resolve(mock_personas_1.PERSONAS);
+        return this.http.get(this.personasUrl)
+            .toPromise()
+            .then(function (response) { return response.json().data; })
+            .catch(this.handleError);
     };
+    /*getPersonas(): Promise<Persona[]> {
+      return Promise.resolve(PERSONAS);
+    }*/
     PersonaService.prototype.getPersona = function (id) {
         return this.getPersonas()
             .then(function (personas) { return personas.find(function (personas) { return personas.id === id; }); });
     };
-    PersonaService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], PersonaService);
+    PersonaService.prototype.updatePersona = function (persona) {
+        var url = this.personasUrl + "/" + persona.id;
+        return this.http
+            .put(url, JSON.stringify(persona), { headers: this.headers })
+            .toPromise()
+            .then(function () { return persona; })
+            .catch(this.handleError);
+    };
+    PersonaService.prototype.handleError = function (error) {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
+    };
     return PersonaService;
 }());
+PersonaService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], PersonaService);
 exports.PersonaService = PersonaService;
 //# sourceMappingURL=persona.service.js.map

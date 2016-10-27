@@ -34,4 +34,9 @@ export class DetallePersonaComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  guardar(): void {
+  this.personaService.updatePersona(this.persona)
+    .then(() => this.goBack());
+}
 }
