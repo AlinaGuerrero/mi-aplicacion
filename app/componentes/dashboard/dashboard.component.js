@@ -31,6 +31,7 @@ var DashboardComponent = (function () {
             moduleId: module.id,
             selector: 'mi-dashboard',
             templateUrl: 'dashboard.component.html',
+            styleUrls: ['dashboard.component.css']
         }), 
         __metadata('design:paramtypes', [router_1.Router, persona_service_1.PersonaService])
     ], DashboardComponent);

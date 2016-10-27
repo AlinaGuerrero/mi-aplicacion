@@ -8,6 +8,7 @@ import { PersonaService } from '../../servicios/persona.service';
   moduleId: module.id,
   selector: 'mi-dashboard',
   templateUrl: 'dashboard.component.html',
+  styleUrls: [ 'dashboard.component.css' ]
 })
 
 export class DashboardComponent implements OnInit {

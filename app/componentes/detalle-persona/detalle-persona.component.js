@@ -36,8 +36,10 @@ var DetallePersonaComponent = (function () {
     ], DetallePersonaComponent.prototype, "persona", void 0);
     DetallePersonaComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'mi-detalle-persona',
-            template: "\n    <div *ngIf=\"persona\">\n      <h2>{{persona.nombre}} - detalles!</h2>\n      <div><label>Id: </label>{{persona.id}}</div>\n      <div>\n        <label>Nombre: </label>\n        <input [(ngModel)]=\"persona.nombre\" placeholder=\"nombre\"/>\n      </div>\n    </div>\n    <button (click)=\"goBack()\">Volver</button>\n  "
+            templateUrl: 'detalle-persona.component.html',
+            styleUrls: ['detalle-persona.component.css']
         }), 
         __metadata('design:paramtypes', [persona_service_1.PersonaService, router_1.ActivatedRoute, common_1.Location])
     ], DetallePersonaComponent);

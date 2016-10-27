@@ -10,29 +10,13 @@ import { DashboardComponent }     from './componentes/dashboard/dashboard.compon
 
 import { PersonaService }     from './servicios/persona.service';
 
+import { AppRoutingModule }     from './app-routing.module';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-      },
-      {
-        path: 'personas',
-        component: PersonasComponent
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: 'detalle/:id',
-        component: DetallePersonaComponent
-      },
-    ])
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
