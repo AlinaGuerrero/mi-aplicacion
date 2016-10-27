@@ -9,10 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var persona_1 = require('../clases/persona');
+var router_1 = require('@angular/router');
+var common_1 = require('@angular/common');
+var persona_1 = require('../../clases/persona');
+var persona_service_1 = require('../../servicios/persona.service');
 var DetallePersonaComponent = (function () {
-    function DetallePersonaComponent() {
+    function DetallePersonaComponent(personaService, route, location) {
+        this.personaService = personaService;
+        this.route = route;
+        this.location = location;
     }
+    DetallePersonaComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.forEach(function (params) {
+            var id = +params['id'];
+            _this.personaService.getPersona(id)
+                .then(function (persona) { return _this.persona = persona; });
+        });
+    };
+    DetallePersonaComponent.prototype.goBack = function () {
+        this.location.back();
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', persona_1.Persona)
@@ -20,9 +37,9 @@ var DetallePersonaComponent = (function () {
     DetallePersonaComponent = __decorate([
         core_1.Component({
             selector: 'mi-detalle-persona',
-            template: "\n    <div *ngIf=\"persona\">\n      <h2>{{persona.nombre}} - detalles!</h2>\n      <div><label>Id: </label>{{persona.id}}</div>\n      <div>\n        <label>Nombre: </label>\n        <input [(ngModel)]=\"persona.nombre\" placeholder=\"nombre\"/>\n      </div>\n    </div>\n  "
+            template: "\n    <div *ngIf=\"persona\">\n      <h2>{{persona.nombre}} - detalles!</h2>\n      <div><label>Id: </label>{{persona.id}}</div>\n      <div>\n        <label>Nombre: </label>\n        <input [(ngModel)]=\"persona.nombre\" placeholder=\"nombre\"/>\n      </div>\n    </div>\n    <button (click)=\"goBack()\">Volver</button>\n  "
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [persona_service_1.PersonaService, router_1.ActivatedRoute, common_1.Location])
     ], DetallePersonaComponent);
     return DetallePersonaComponent;
 }());

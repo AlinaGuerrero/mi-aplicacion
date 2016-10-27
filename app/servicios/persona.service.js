@@ -16,6 +16,10 @@ var PersonaService = (function () {
     PersonaService.prototype.getPersonas = function () {
         return Promise.resolve(mock_personas_1.PERSONAS);
     };
+    PersonaService.prototype.getPersona = function (id) {
+        return this.getPersonas()
+            .then(function (personas) { return personas.find(function (personas) { return personas.id === id; }); });
+    };
     PersonaService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

@@ -11,8 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
+var router_1 = require('@angular/router');
 var app_component_1 = require('./app.component');
-var detalle_persona_component_1 = require('./componentes/detalle-persona.component');
+var detalle_persona_component_1 = require('./componentes/detalle-persona/detalle-persona.component');
+var personas_component_1 = require('./componentes/personas/personas.component');
+var dashboard_component_1 = require('./componentes/dashboard/dashboard.component');
+var persona_service_1 = require('./servicios/persona.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,11 +24,35 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                router_1.RouterModule.forRoot([
+                    {
+                        path: '',
+                        redirectTo: '/dashboard',
+                        pathMatch: 'full'
+                    },
+                    {
+                        path: 'personas',
+                        component: personas_component_1.PersonasComponent
+                    },
+                    {
+                        path: 'dashboard',
+                        component: dashboard_component_1.DashboardComponent
+                    },
+                    {
+                        path: 'detalle/:id',
+                        component: detalle_persona_component_1.DetallePersonaComponent
+                    },
+                ])
             ],
             declarations: [
                 app_component_1.AppComponent,
-                detalle_persona_component_1.DetallePersonaComponent
+                detalle_persona_component_1.DetallePersonaComponent,
+                personas_component_1.PersonasComponent,
+                dashboard_component_1.DashboardComponent
+            ],
+            providers: [
+                persona_service_1.PersonaService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
