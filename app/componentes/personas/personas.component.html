@@ -1,9 +1,18 @@
 <h2>Listado de Personas</h2>
+
+<div>
+  <label>Nombre:</label> <input #nombrePersona />
+  <button (click)="agregar(nombrePersona.value); nombrePersona.value=''">
+    Agregar
+  </button>
+</div>
+
 <ul class="personas">
   <li *ngFor="let persona of personas"
     [class.selected]="persona === selectedPersona"
     (click)="onSelect(persona)">
     <span class="badge">{{persona.id}}</span> {{persona.nombre}}
+    <button class="delete" (click)="delete(persona); $event.stopPropagation()">x</button>
   </li>
 </ul>
 <div *ngIf="selectedPersona">

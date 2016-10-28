@@ -42,6 +42,25 @@ export class PersonaService {
       .catch(this.handleError);
   }
 
+  crear(nombre: string): Promise<Persona> {
+    return this.http
+      .post(this.personasUrl,
+            JSON.stringify({nombre: nombre}),
+            {headers: this.headers})
+      .toPromise()
+      .then(res => res.json().data)
+      .catch(this.handleError);
+  }
+
+  eliminar(id: number): Promise<void> {
+    const url = `${this.personasUrl}/${id}`;
+    return this.http.delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
+
+
 private handleError(error: any): Promise<any> {
   console.error('An error occurred', error); // for demo purposes only
   return Promise.reject(error.message || error);

@@ -34,4 +34,25 @@ export class PersonasComponent {
   abrirDetalle(): void {
     this.router.navigate(['/detalle', this.selectedPersona.id]);
   }
+
+  agregar(nombre: string): void {
+    nombre = nombre.trim();
+    if (!nombre) { return; }
+    this.personaService.crear(nombre)
+      .then(persona => {
+        this.personas.push(persona);
+        this.selectedPersona = null;
+      });
+  }
+
+  delete(persona: Persona): void {
+    this.personaService
+        .eliminar(persona.id)
+        .then(() => {
+          this.personas = this.personas.filter(p => p !== persona);
+          if (this.selectedPersona === persona) { this.selectedPersona = null; }
+        });
+  }
+
+
 }

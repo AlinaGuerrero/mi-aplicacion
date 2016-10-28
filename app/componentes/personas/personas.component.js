@@ -29,6 +29,29 @@ var PersonasComponent = (function () {
     PersonasComponent.prototype.abrirDetalle = function () {
         this.router.navigate(['/detalle', this.selectedPersona.id]);
     };
+    PersonasComponent.prototype.agregar = function (nombre) {
+        var _this = this;
+        nombre = nombre.trim();
+        if (!nombre) {
+            return;
+        }
+        this.personaService.crear(nombre)
+            .then(function (persona) {
+            _this.personas.push(persona);
+            _this.selectedPersona = null;
+        });
+    };
+    PersonasComponent.prototype.delete = function (persona) {
+        var _this = this;
+        this.personaService
+            .eliminar(persona.id)
+            .then(function () {
+            _this.personas = _this.personas.filter(function (p) { return p !== persona; });
+            if (_this.selectedPersona === persona) {
+                _this.selectedPersona = null;
+            }
+        });
+    };
     PersonasComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

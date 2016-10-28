@@ -12,12 +12,14 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
+require('./rxjs-extensions');
 // Imports for loading & configuring the in-memory web api
 var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
 var in_memory_data_service_1 = require('./servicios/in-memory-data.service');
 var app_component_1 = require('./app.component');
 var detalle_persona_component_1 = require('./componentes/detalle-persona/detalle-persona.component');
 var personas_component_1 = require('./componentes/personas/personas.component');
+var buscar_persona_component_1 = require('./componentes/buscar-persona/buscar-persona.component');
 var dashboard_component_1 = require('./componentes/dashboard/dashboard.component');
 var persona_service_1 = require('./servicios/persona.service');
 var app_routing_module_1 = require('./app-routing.module');
@@ -37,7 +39,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 detalle_persona_component_1.DetallePersonaComponent,
                 personas_component_1.PersonasComponent,
-                dashboard_component_1.DashboardComponent
+                dashboard_component_1.DashboardComponent,
+                buscar_persona_component_1.BuscarPersonaComponent
             ],
             providers: [
                 persona_service_1.PersonaService

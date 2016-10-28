@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
-require("rxjs/add/operator/toPromise");
+var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+require('rxjs/add/operator/toPromise');
 var PersonaService = (function () {
     function PersonaService(http) {
         this.http = http;
@@ -38,15 +38,29 @@ var PersonaService = (function () {
             .then(function () { return persona; })
             .catch(this.handleError);
     };
+    PersonaService.prototype.crear = function (nombre) {
+        return this.http
+            .post(this.personasUrl, JSON.stringify({ nombre: nombre }), { headers: this.headers })
+            .toPromise()
+            .then(function (res) { return res.json().data; })
+            .catch(this.handleError);
+    };
+    PersonaService.prototype.eliminar = function (id) {
+        var url = this.personasUrl + "/" + id;
+        return this.http.delete(url, { headers: this.headers })
+            .toPromise()
+            .then(function () { return null; })
+            .catch(this.handleError);
+    };
     PersonaService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
+    PersonaService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], PersonaService);
     return PersonaService;
 }());
-PersonaService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], PersonaService);
 exports.PersonaService = PersonaService;
 //# sourceMappingURL=persona.service.js.map
