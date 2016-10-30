@@ -8,6 +8,8 @@ import { DosServiciosComponent } from './componentes/dos-servicios/dos-servicios
 import { PadreComponent }     from './componentes/padre-hijo/padre.component';
 import { DashboardComponent }     from './componentes/dashboard/dashboard.component';
 
+import { HelloWorld }     from 'ucuenca-pruebas-angular/components';
+
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard',  component: DashboardComponent },
@@ -15,7 +17,8 @@ const routes: Routes = [
   { path: 'personas',     component: PersonasComponent },
   { path: 'componentes',     component: DosComponentesComponent },
   { path: 'servicios',     component: DosServiciosComponent },
-  { path: 'padre-hijo',     component: PadreComponent }
+  { path: 'padre-hijo',     component: PadreComponent },
+  { path: 'externo',     component: HelloWorld }
 ];
 
 @NgModule({

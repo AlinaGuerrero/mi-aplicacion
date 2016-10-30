@@ -31,6 +31,7 @@ var persona_service_1 = require('./servicios/persona.service');
 var persona_observable_service_1 = require('./servicios/persona-observable.service');
 var app_routing_module_1 = require('./app-routing.module');
 var common_module_1 = require("./common/common.module");
+var components_1 = require("ucuenca-pruebas-angular/components");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -55,7 +56,8 @@ var AppModule = (function () {
                 componente2_component_1.Componente2Component,
                 dos_servicios_component_1.DosServiciosComponent,
                 padre_component_1.PadreComponent,
-                hijo_component_1.HijoComponent
+                hijo_component_1.HijoComponent,
+                components_1.HelloWorld
             ],
             providers: [
                 persona_service_1.PersonaService,

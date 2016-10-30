@@ -12,6 +12,7 @@ import { Component } from '@angular/core';
      <a routerLink="/servicios" routerLinkActive="active">Dos servicios</a>
      <a routerLink="/componentes" routerLinkActive="active">Interaccion Ej. 1</a>
      <a routerLink="/padre-hijo" routerLinkActive="active">Interaccion Ej. 2</a>
+     <a routerLink="/externo" routerLinkActive="active">Componente Externo</a>
    </nav>
    <router-outlet></router-outlet>
    <my-footer></my-footer>

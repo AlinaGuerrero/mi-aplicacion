@@ -8,22 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var FooterComponent = (function () {
     function FooterComponent() {
     }
+    FooterComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'my-footer',
+            template: "\n    <footer class=\"footer\">\n          \u00A9 2016 Universidad de Cuenca.\n    </footer>\n  ",
+            styles: [
+                "\n    .footer{\n      width: inherit;\n      height: 50px;\n      background-color: #bfd3e4;\n      margin-top:50px;\n      text-align: center;\n      padding-top: 10px\n    }\n    "
+            ]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], FooterComponent);
     return FooterComponent;
 }());
-FooterComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'my-footer',
-        template: "\n    <footer class=\"footer\">\n          \u00A9 2016 Universidad de Cuenca.\n    </footer>\n  ",
-        styles: [
-            "\n    .footer{\n      width: inherit;\n      height: 50px;\n      background-color: #bfd3e4;\n      margin-top:50px;\n      text-align: center;\n      padding-top: 10px\n    }\n    "
-        ]
-    }),
-    __metadata("design:paramtypes", [])
-], FooterComponent);
 exports.FooterComponent = FooterComponent;
 //# sourceMappingURL=footer.component.js.map

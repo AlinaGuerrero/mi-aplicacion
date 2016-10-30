@@ -16,6 +16,7 @@ var dos_componentes_component_1 = require('./componentes/dos-componentes/dos-com
 var dos_servicios_component_1 = require('./componentes/dos-servicios/dos-servicios.component');
 var padre_component_1 = require('./componentes/padre-hijo/padre.component');
 var dashboard_component_1 = require('./componentes/dashboard/dashboard.component');
+var components_1 = require('ucuenca-pruebas-angular/components');
 var routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
@@ -23,7 +24,8 @@ var routes = [
     { path: 'personas', component: personas_component_1.PersonasComponent },
     { path: 'componentes', component: dos_componentes_component_1.DosComponentesComponent },
     { path: 'servicios', component: dos_servicios_component_1.DosServiciosComponent },
-    { path: 'padre-hijo', component: padre_component_1.PadreComponent }
+    { path: 'padre-hijo', component: padre_component_1.PadreComponent },
+    { path: 'externo', component: components_1.HelloWorld }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

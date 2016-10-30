@@ -33,6 +33,8 @@ import { AppRoutingModule }     from './app-routing.module';
 
 import {CommonModule} from "./common/common.module";
 
+import { HelloWorld } from "ucuenca-pruebas-angular/components";
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import {CommonModule} from "./common/common.module";
     Componente2Component,
     DosServiciosComponent,
     PadreComponent,
-    HijoComponent
+    HijoComponent,
+    HelloWorld
   ],
   providers: [
     PersonaService,

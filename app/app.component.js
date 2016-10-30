@@ -17,7 +17,7 @@ var AppComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
-            template: "\n  <my-header></my-header>\n  <h1>{{title}}</h1>\n   <nav>\n     <a routerLink=\"/dashboard\" routerLinkActive=\"active\">Dashboard</a>\n     <a routerLink=\"/personas\" routerLinkActive=\"active\">Personas</a>\n     <a routerLink=\"/servicios\" routerLinkActive=\"active\">Dos servicios</a>\n     <a routerLink=\"/componentes\" routerLinkActive=\"active\">Interaccion Ej. 1</a>\n     <a routerLink=\"/padre-hijo\" routerLinkActive=\"active\">Interaccion Ej. 2</a>\n   </nav>\n   <router-outlet></router-outlet>\n   <my-footer></my-footer>\n  ",
+            template: "\n  <my-header></my-header>\n  <h1>{{title}}</h1>\n   <nav>\n     <a routerLink=\"/dashboard\" routerLinkActive=\"active\">Dashboard</a>\n     <a routerLink=\"/personas\" routerLinkActive=\"active\">Personas</a>\n     <a routerLink=\"/servicios\" routerLinkActive=\"active\">Dos servicios</a>\n     <a routerLink=\"/componentes\" routerLinkActive=\"active\">Interaccion Ej. 1</a>\n     <a routerLink=\"/padre-hijo\" routerLinkActive=\"active\">Interaccion Ej. 2</a>\n     <a routerLink=\"/externo\" routerLinkActive=\"active\">Componente Externo</a>\n   </nav>\n   <router-outlet></router-outlet>\n   <my-footer></my-footer>\n  ",
             styleUrls: ['app.component.css'],
         }), 
         __metadata('design:paramtypes', [])
