@@ -8,11 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var Observable_1 = require("rxjs/Observable");
-var Subject_1 = require("rxjs/Subject");
-var buscar_persona_service_1 = require("../../servicios/buscar-persona.service");
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var Observable_1 = require('rxjs/Observable');
+var Subject_1 = require('rxjs/Subject');
+var buscar_persona_service_1 = require('../../servicios/buscar-persona.service');
 var BuscarPersonaComponent = (function () {
     function BuscarPersonaComponent(buscarPersonaService, router) {
         this.buscarPersonaService = buscarPersonaService;
@@ -40,18 +40,17 @@ var BuscarPersonaComponent = (function () {
         var link = ['/detalle', persona.id];
         this.router.navigate(link);
     };
+    BuscarPersonaComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'buscar-persona',
+            templateUrl: 'buscar-persona.component.html',
+            styleUrls: ['buscar-persona.component.css'],
+            providers: [buscar_persona_service_1.BuscarPersonaService]
+        }), 
+        __metadata('design:paramtypes', [buscar_persona_service_1.BuscarPersonaService, router_1.Router])
+    ], BuscarPersonaComponent);
     return BuscarPersonaComponent;
 }());
-BuscarPersonaComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'buscar-persona',
-        templateUrl: 'buscar-persona.component.html',
-        styleUrls: ['buscar-persona.component.css'],
-        providers: [buscar_persona_service_1.BuscarPersonaService]
-    }),
-    __metadata("design:paramtypes", [buscar_persona_service_1.BuscarPersonaService,
-        router_1.Router])
-], BuscarPersonaComponent);
 exports.BuscarPersonaComponent = BuscarPersonaComponent;
 //# sourceMappingURL=buscar-persona.component.js.map
