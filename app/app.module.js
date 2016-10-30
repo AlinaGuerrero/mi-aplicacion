@@ -30,6 +30,7 @@ var hijo_component_1 = require('./componentes/padre-hijo/hijo.component');
 var persona_service_1 = require('./servicios/persona.service');
 var persona_observable_service_1 = require('./servicios/persona-observable.service');
 var app_routing_module_1 = require('./app-routing.module');
+var common_module_1 = require("./common/common.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -40,7 +41,8 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
-                app_routing_module_1.AppRoutingModule
+                app_routing_module_1.AppRoutingModule,
+                common_module_1.CommonModule
             ],
             declarations: [
                 app_component_1.AppComponent,

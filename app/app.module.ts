@@ -31,13 +31,16 @@ import { PersonaObservableService }     from './servicios/persona-observable.ser
 
 import { AppRoutingModule }     from './app-routing.module';
 
+import {CommonModule} from "./common/common.module";
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule
   ],
   declarations: [
     AppComponent,

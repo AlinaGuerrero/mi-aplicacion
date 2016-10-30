@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   moduleId:module.id,
   selector: 'my-app',
   template: `
+  <my-header></my-header>
   <h1>{{title}}</h1>
    <nav>
      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
@@ -13,6 +14,7 @@ import { Component } from '@angular/core';
      <a routerLink="/padre-hijo" routerLinkActive="active">Interaccion Ej. 2</a>
    </nav>
    <router-outlet></router-outlet>
+   <my-footer></my-footer>
   `,
   styleUrls: ['app.component.css'],
 })
