@@ -17,7 +17,17 @@ import { PersonasComponent }     from './componentes/personas/personas.component
 import { BuscarPersonaComponent }     from './componentes/buscar-persona/buscar-persona.component';
 import { DashboardComponent }     from './componentes/dashboard/dashboard.component';
 
+import { DosComponentesComponent }  from './componentes/dos-componentes/dos-componentes.component';
+import {Componente1Component} from './componentes/dos-componentes/componente1.component';
+import {Componente2Component} from './componentes/dos-componentes/componente2.component';
+
+import { DosServiciosComponent }  from './componentes/dos-servicios/dos-servicios.component';
+
+import { PadreComponent }  from './componentes/padre-hijo/padre.component';
+import { HijoComponent }  from './componentes/padre-hijo/hijo.component';
+
 import { PersonaService }     from './servicios/persona.service';
+import { PersonaObservableService }     from './servicios/persona-observable.service';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -34,10 +44,17 @@ import { AppRoutingModule }     from './app-routing.module';
     DetallePersonaComponent,
     PersonasComponent,
     DashboardComponent,
-    BuscarPersonaComponent
+    BuscarPersonaComponent,
+    DosComponentesComponent,
+    Componente1Component,
+    Componente2Component,
+    DosServiciosComponent,
+    PadreComponent,
+    HijoComponent
   ],
   providers: [
-    PersonaService
+    PersonaService,
+    PersonaObservableService
   ],
   bootstrap: [ AppComponent ]
 })

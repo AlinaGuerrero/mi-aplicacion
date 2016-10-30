@@ -21,7 +21,14 @@ var detalle_persona_component_1 = require('./componentes/detalle-persona/detalle
 var personas_component_1 = require('./componentes/personas/personas.component');
 var buscar_persona_component_1 = require('./componentes/buscar-persona/buscar-persona.component');
 var dashboard_component_1 = require('./componentes/dashboard/dashboard.component');
+var dos_componentes_component_1 = require('./componentes/dos-componentes/dos-componentes.component');
+var componente1_component_1 = require('./componentes/dos-componentes/componente1.component');
+var componente2_component_1 = require('./componentes/dos-componentes/componente2.component');
+var dos_servicios_component_1 = require('./componentes/dos-servicios/dos-servicios.component');
+var padre_component_1 = require('./componentes/padre-hijo/padre.component');
+var hijo_component_1 = require('./componentes/padre-hijo/hijo.component');
 var persona_service_1 = require('./servicios/persona.service');
+var persona_observable_service_1 = require('./servicios/persona-observable.service');
 var app_routing_module_1 = require('./app-routing.module');
 var AppModule = (function () {
     function AppModule() {
@@ -40,10 +47,17 @@ var AppModule = (function () {
                 detalle_persona_component_1.DetallePersonaComponent,
                 personas_component_1.PersonasComponent,
                 dashboard_component_1.DashboardComponent,
-                buscar_persona_component_1.BuscarPersonaComponent
+                buscar_persona_component_1.BuscarPersonaComponent,
+                dos_componentes_component_1.DosComponentesComponent,
+                componente1_component_1.Componente1Component,
+                componente2_component_1.Componente2Component,
+                dos_servicios_component_1.DosServiciosComponent,
+                padre_component_1.PadreComponent,
+                hijo_component_1.HijoComponent
             ],
             providers: [
-                persona_service_1.PersonaService
+                persona_service_1.PersonaService,
+                persona_observable_service_1.PersonaObservableService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

@@ -9,20 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Mi Aplicación';
+var Componente2Component = (function () {
+    function Componente2Component() {
     }
-    AppComponent = __decorate([
+    Componente2Component.prototype.setPersona = function (persona) {
+        this.persona = persona;
+    };
+    Componente2Component = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-app',
-            template: "\n  <h1>{{title}}</h1>\n   <nav>\n     <a routerLink=\"/dashboard\" routerLinkActive=\"active\">Dashboard</a>\n     <a routerLink=\"/personas\" routerLinkActive=\"active\">Personas</a>\n     <a routerLink=\"/servicios\" routerLinkActive=\"active\">Dos servicios</a>\n     <a routerLink=\"/componentes\" routerLinkActive=\"active\">Interaccion Ej. 1</a>\n     <a routerLink=\"/padre-hijo\" routerLinkActive=\"active\">Interaccion Ej. 2</a>\n   </nav>\n   <router-outlet></router-outlet>\n  ",
-            styleUrls: ['app.component.css'],
+            selector: 'componente2',
+            templateUrl: 'componente2.component.html',
+            styleUrls: ['componente2.component.css'],
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], Componente2Component);
+    return Componente2Component;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.Componente2Component = Componente2Component;
+//# sourceMappingURL=componente2.component.js.map

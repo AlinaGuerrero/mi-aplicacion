@@ -9,20 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Mi Aplicación';
+var persona_1 = require('../../clases/persona');
+var HijoComponent = (function () {
+    function HijoComponent() {
     }
-    AppComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', persona_1.Persona)
+    ], HijoComponent.prototype, "persona", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], HijoComponent.prototype, "curso", void 0);
+    HijoComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            template: "\n  <h1>{{title}}</h1>\n   <nav>\n     <a routerLink=\"/dashboard\" routerLinkActive=\"active\">Dashboard</a>\n     <a routerLink=\"/personas\" routerLinkActive=\"active\">Personas</a>\n     <a routerLink=\"/servicios\" routerLinkActive=\"active\">Dos servicios</a>\n     <a routerLink=\"/componentes\" routerLinkActive=\"active\">Interaccion Ej. 1</a>\n     <a routerLink=\"/padre-hijo\" routerLinkActive=\"active\">Interaccion Ej. 2</a>\n   </nav>\n   <router-outlet></router-outlet>\n  ",
-            styleUrls: ['app.component.css'],
+            selector: 'hijo',
+            template: "\n    <h3>{{persona.nombre}} dice:</h3>\n    <p>Yo, {{persona.nombre}}, estoy inscrito en el curso, {{curso}}.</p>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], HijoComponent);
+    return HijoComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.HijoComponent = HijoComponent;
+//# sourceMappingURL=hijo.component.js.map

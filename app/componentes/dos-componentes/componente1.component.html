@@ -1,0 +1,8 @@
+<h2>Componente 1</h2>
+
+			<ul class="personas">
+				<li *ngFor="let persona of personas" (click)="selectPersona(persona)" >
+					<span class="badge">{{persona.id}}</span>
+					<span>{{persona.nombre}}</span>
+				</li>
+			</ul>

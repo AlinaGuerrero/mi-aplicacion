@@ -12,12 +12,18 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var detalle_persona_component_1 = require('./componentes/detalle-persona/detalle-persona.component');
 var personas_component_1 = require('./componentes/personas/personas.component');
+var dos_componentes_component_1 = require('./componentes/dos-componentes/dos-componentes.component');
+var dos_servicios_component_1 = require('./componentes/dos-servicios/dos-servicios.component');
+var padre_component_1 = require('./componentes/padre-hijo/padre.component');
 var dashboard_component_1 = require('./componentes/dashboard/dashboard.component');
 var routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
     { path: 'detalle/:id', component: detalle_persona_component_1.DetallePersonaComponent },
-    { path: 'personas', component: personas_component_1.PersonasComponent }
+    { path: 'personas', component: personas_component_1.PersonasComponent },
+    { path: 'componentes', component: dos_componentes_component_1.DosComponentesComponent },
+    { path: 'servicios', component: dos_servicios_component_1.DosServiciosComponent },
+    { path: 'padre-hijo', component: padre_component_1.PadreComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

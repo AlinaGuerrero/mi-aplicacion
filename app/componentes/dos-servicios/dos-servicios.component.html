@@ -1,0 +1,17 @@
+<h2>Un componente llama a dos servicios</h2>
+
+<div>
+    <div>
+			<ul class="personas">
+				<li *ngFor="let persona of personas" >
+					<span class="badge">{{persona.id}}</span>
+					<span>{{persona.nombre}}</span>
+				</li>
+			</ul>
+		</div>
+    <div>
+				<li *ngFor="let persona of listaServicio2" >
+					<span class="badge">Servicio 2 - ID: {{persona.id}} | Nombre: {{persona.nombre}} </span>
+				</li>
+		</div>
+</div>

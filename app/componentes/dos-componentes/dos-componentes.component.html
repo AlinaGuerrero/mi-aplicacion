@@ -1,0 +1,12 @@
+<h2>Integración de componentes - Ejemplo 1</h2>
+<button (click)="getPersonas()">Listar Personas</button>
+<div >
+    <div >
+			<componente1 (selectedPersona)="selectPersona($event)">
+			</componente1>
+		</div>
+    <div >
+      <componente2 >
+      </componente2>
+		</div>
+</div>
